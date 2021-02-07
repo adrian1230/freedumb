@@ -1,24 +1,28 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import "dart:math";
-
 import 'package:funspot/pages/home.dart';
 
 class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var s_list = [
+    var splashes = [
       "assets/images/s1.png",
       "assets/images/s2.png",
       // "assets/images/s3.png",
     ];
-    var s_color = [
-      Colors.white,
-      Colors.black
-    ];
     final _random = new Random();
-    var n = _random.nextInt(s_list.length);
-    var ele = s_list[n];
-    var ment = s_color[n];
+    var n = _random.nextInt(splashes.length);
+    var ele = splashes[n];
+    Timer(
+      Duration(seconds: 2),
+      () =>
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (BuildContext context) => Home()
+        )
+      )
+    );
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -27,34 +31,6 @@ class Splash extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: Column(
-          children: [
-            Expanded(child: Container(),),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                FlatButton(
-                  onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (ctx) => Home(),
-                      )
-                  ),
-                  child: Text(
-                    "Log On",
-                    style: TextStyle(
-                      color: ment,
-                      fontSize: 30,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                ),
-                SizedBox(width: 20),
-              ],
-            ),
-            SizedBox(height:20)
-          ],
-        )
       ),
     );
   }
