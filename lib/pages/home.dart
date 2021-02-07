@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
 
 class Home extends StatefulWidget {
   @override
@@ -10,6 +9,27 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    var book_image = [
+      "assets/images/b1.png",
+      "assets/images/b2.png",
+      "assets/images/b3.png",
+      "assets/images/b4.png",
+      "assets/images/b5.png",
+      "assets/images/b6.png",
+      "assets/images/b7.png",
+    ];
+    var book_price = [
+      12,19.9,14,25,67,109,48.5
+    ];
+    var book_name = [
+      "THE GENE AND INTIMATE HISTORY",
+      "MY FIGHT YOUR FIGHT",
+      "STOP SURVIVING START FIGHTING",
+      "THE SURVIVORS",
+      "The Mermaid of Black Conch",
+      "PROSPER'S DEMON",
+      "The Body"
+    ];
     return Scaffold(
       // backgroundColor: Color(0xffEBEDF0),
       body: Stack(
@@ -30,7 +50,7 @@ class _HomeState extends State<Home> {
                   text: TextSpan(
                     children: [
                       TextSpan(
-                        text: "What are you reading",
+                        text: "You are reading ~",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.brown[700],
@@ -39,6 +59,29 @@ class _HomeState extends State<Home> {
                       ),
                     ],
                   ),
+                ),
+              ),
+              SizedBox(height: 15),
+              SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(top: size.height * .31),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ]
                 ),
               ),
             ],
