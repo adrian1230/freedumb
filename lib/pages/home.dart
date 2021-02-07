@@ -13,17 +13,8 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Color(0xffEBEDF0),
       body: SafeArea(
-        child: Column(
-          children: [
-            Container(
-              padding: EdgeInsets.only(
-                top: 15,
-                left: 15,
-                right: 15,
-              ),
-              child: Column(),
-            ),
-          ],
+        child: SingleChildScrollView(
+          
         ),
       ),
     );
