@@ -11,16 +11,17 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff010A43),
+      backgroundColor: Color(0xffEBEDF0),
       body: SafeArea(
         child: Column(
           children: [
             Container(
               padding: EdgeInsets.only(
-                top: 10,
-                left: 20,
-                right: 20,
+                top: 15,
+                left: 15,
+                right: 15,
               ),
+              child: Column(),
             ),
           ],
         ),

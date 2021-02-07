@@ -15,7 +15,7 @@ class Splash extends StatelessWidget {
     var n = _random.nextInt(splashes.length);
     var ele = splashes[n];
     Timer(
-      Duration(seconds: 2),
+      Duration(seconds: 5),
       () =>
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
