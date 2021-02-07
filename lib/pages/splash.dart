@@ -11,9 +11,9 @@ class Splash extends StatelessWidget {
       "assets/images/s2.png",
       // "assets/images/s3.png",
     ];
-    final _random = new Random();
+    var _random = new Random();
     var n = _random.nextInt(splashes.length);
-    var ele = splashes[n];
+    final ele = splashes[n];
     Timer(
       Duration(seconds: 5),
       () =>
