@@ -38,7 +38,8 @@ class Splash extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (ctx) => Home(),
-                      )),
+                      )
+                  ),
                   child: Text(
                     "Log On",
                     style: TextStyle(
