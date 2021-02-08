@@ -7,6 +7,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  List<int> top = [];
+  List<int> bottom = [0];
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
