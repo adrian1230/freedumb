@@ -52,6 +52,30 @@ class _HomeState extends State<Home> {
         "name":"The Body",
         "price":82
       },
+      {
+        "id":"7",
+        "img":"assets/images/b8.png",
+        "name":"Poems of the Masters",
+        "price":42
+      },
+      {
+        "id":"8",
+        "img":"assets/images/b9.png",
+        "name":"SCOTLAND and the FLEMISH PEOPLE",
+        "price":182
+      },
+      {
+        "id":"9",
+        "img":"assets/images/b10.png",
+        "name":"BOTTOM of the POT",
+        "price": 92
+      },
+      {
+        "id":"10",
+        "img":"assets/images/b11.png",
+        "name":"FRENCH GRAMMAR FOR BEGINNERS",
+        "price":152
+      },
     ];
     return Scaffold(
       body: Stack(
@@ -83,51 +107,55 @@ class _HomeState extends State<Home> {
                   ),
                 ),
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(width: size.height * 0.2),
-                    Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: size.width * 0.1, vertical: size.height * 0.03),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              for (var i in books)
-                                Container(
-                                  margin: EdgeInsets.only(bottom: 16),
-                                  width: size.width - 38,
-                                  decoration: BoxDecoration(
-                                    color:  Color(0xFFEBEDF0),
-                                    borderRadius: BorderRadius.circular(25),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        offset: Offset(0,10),
-                                        blurRadius: 28,
-                                        color: Color(0xFFD6D4D2).withOpacity(0.6),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(width: size.height * 0.4),
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: size.width * 0.05, vertical: size.height * 0.03),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            SingleChildScrollView(
+                              child: Column(
+                                children: [
+                                  for (var i in books)
+                                    Container(
+                                      margin: EdgeInsets.only(bottom: 16),
+                                      width: size.width - 38,
+                                      decoration: BoxDecoration(
+                                        color:  Color(0xFFEBEDF0),
+                                        borderRadius: BorderRadius.circular(25),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            offset: Offset(0,10),
+                                            blurRadius: 28,
+                                            color: Color(0xFFD6D4D2).withOpacity(0.6),
+                                          ),
+                                        ],
                                       ),
-                                    ],
-                                  ),
-                                  child: ListTile(
-                                    leading: CircleAvatar(
-                                      backgroundImage: AssetImage(i["img"]),
+                                      child: ListTile(
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(i["img"]),
+                                          radius: 50,
+                                        ),
+                                        title: Text(i["name"]),
+                                        subtitle: Text(i["price"].toString()+" USD"),
+                                        onLongPress: () => {},
+                                      ),
                                     ),
-                                    title: Text(i["name"]),
-                                    subtitle: Text(i["price"].toString()),
-                                    onLongPress: () => {},
-                                  ),
-                                ),
-                            ],
-                          ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ]
-                ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ],
           ),
