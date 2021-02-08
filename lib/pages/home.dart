@@ -13,30 +13,48 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Stack(
-        children: [
-          Background(size: size),
-          Introduction(),
-          SizedBox(height: size.height * 0.2),
-          Divider(),
-          Center(
-            child: SingleChildScrollView(
-              padding: EdgeInsets.fromLTRB(
-                15, size.height*0.1, 15, 10
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  SizedBox(height: size.height*0.01),
-                  Column(
-                    children: _forloop(books, size),
-                  ),
-                ],
-              ),
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            // title: Introduction(),
+            floating: false,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Introduction(),
+            ),
+            pinned: true,
+            // snap: false,
+          ),
+          SliverList(
+            delegate: SliverChildListDelegate(
+              _forloop(books, size)
             ),
           ),
         ],
       ),
+      // body: Stack(
+      //   children: [
+      //     Background(size: size),
+      //     Introduction(),
+      //     SizedBox(height: size.height * 0.2),
+      //     Divider(),
+      //     Center(
+      //       child: SingleChildScrollView(
+      //         padding: EdgeInsets.fromLTRB(
+      //           15, size.height*0.1, 15, 10
+      //         ),
+      //         child: Column(
+      //           crossAxisAlignment: CrossAxisAlignment.stretch,
+      //           children: [
+      //             SizedBox(height: size.height*0.01),
+      //             Column(
+      //               children: _forloop(books, size),
+      //             ),
+      //           ],
+      //         ),
+      //       ),
+      //     ),
+      //   ],
+      // ),
     );
   }
 
