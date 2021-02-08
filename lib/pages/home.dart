@@ -123,32 +123,35 @@ class _HomeState extends State<Home> {
                             SingleChildScrollView(
                               child: Column(
                                 children: [
-                                  for (var i in books)
-                                    Container(
-                                      height: double.infinity,
-                                      margin: EdgeInsets.only(bottom: 16),
-                                      width: size.width - 38,
-                                      decoration: BoxDecoration(
-                                        color:  Color(0xFFEBEDF0),
-                                        borderRadius: BorderRadius.circular(25),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            offset: Offset(0,10),
-                                            blurRadius: 28,
-                                            color: Color(0xFFD6D4D2).withOpacity(0.6),
+                                  ListView(
+                                    children: [
+                                      for (var i in books)
+                                        Container(
+                                          margin: EdgeInsets.only(bottom: 16),
+                                          width: size.width - 38,
+                                          decoration: BoxDecoration(
+                                            color:  Color(0xFFEBEDF0),
+                                            borderRadius: BorderRadius.circular(25),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                offset: Offset(0,10),
+                                                blurRadius: 28,
+                                                color: Color(0xFFD6D4D2).withOpacity(0.6),
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
-                                      child: ListTile(
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(i["img"]),
-                                          radius: 50,
+                                          child: ListTile(
+                                            leading: CircleAvatar(
+                                              backgroundImage: AssetImage(i["img"]),
+                                              radius: 50,
+                                            ),
+                                            title: Text(i["name"]),
+                                            subtitle: Text(i["price"].toString()+" USD"),
+                                            onLongPress: () => {},
+                                          ),
                                         ),
-                                        title: Text(i["name"]),
-                                        subtitle: Text(i["price"].toString()+" USD"),
-                                        onLongPress: () => {},
-                                      ),
-                                    ),
+                                    ],
+                                  ),
                                 ],
                               ),
                             ),
