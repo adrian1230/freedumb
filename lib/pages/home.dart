@@ -120,9 +120,7 @@ class _HomeState extends State<Home> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            ListView(
-                              children: [
-                                for (var i in books)
+                            for (var i in books)
                                   Container(
                                     margin: EdgeInsets.only(bottom: 16),
                                     width: size.width - 38,
@@ -147,8 +145,6 @@ class _HomeState extends State<Home> {
                                       onLongPress: () => {},
                                     ),
                                   ),
-                              ],
-                            ),
                           ],
                         ),
                       ),
