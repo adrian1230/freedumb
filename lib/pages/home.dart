@@ -91,23 +91,7 @@ class _HomeState extends State<Home> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: size.height * .07),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "Getting Your reading list ~",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.lightGreenAccent[400],
-                          fontSize: 28
-                        )
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              Introduction(),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -121,36 +105,30 @@ class _HomeState extends State<Home> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             for (var i in books)
-                              Expanded(
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.only(bottom: 16),
-                                      width: size.width - 38,
-                                      decoration: BoxDecoration(
-                                        color:  Color(0xFFEBEDF0),
-                                        borderRadius: BorderRadius.circular(25),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            offset: Offset(0,10),
-                                            blurRadius: 28,
-                                            color: Color(0xFFD6D4D2).withOpacity(0.6),
-                                          ),
-                                        ],
-                                      ),
-                                      child: ListTile(
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(i["img"]),
-                                          radius: 50,
-                                        ),
-                                        title: Text(i["name"]),
-                                        subtitle: Text(i["price"].toString()+" USD"),
-                                        onLongPress: () => {},
-                                      ),
-                                    ),
-                                  ],
-                                )
+                            Container(
+                              margin: EdgeInsets.only(bottom: 16),
+                              width: size.width - 38,
+                              decoration: BoxDecoration(
+                                color:  Color(0xFFEBEDF0),
+                                borderRadius: BorderRadius.circular(25),
+                                boxShadow: [
+                                  BoxShadow(
+                                    offset: Offset(0,10),
+                                    blurRadius: 28,
+                                    color: Color(0xFFD6D4D2).withOpacity(0.6),
+                                  ),
+                                ],
                               ),
+                              child: ListTile(
+                                leading: CircleAvatar(
+                                  backgroundImage: AssetImage(i["img"]),
+                                  radius: 50,
+                                ),
+                                title: Text(i["name"]),
+                                subtitle: Text(i["price"].toString()+" USD"),
+                                onLongPress: () => {},
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -161,6 +139,33 @@ class _HomeState extends State<Home> {
             ],
           ),
         ],
+      ),
+    );
+  }
+}
+
+class Introduction extends StatelessWidget {
+  const Introduction({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: RichText(
+        text: TextSpan(
+          children: [
+            TextSpan(
+              text: "Getting Your reading list ~",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.lightGreenAccent[400],
+                fontSize: 28
+              )
+            ),
+          ],
+        ),
       ),
     );
   }
