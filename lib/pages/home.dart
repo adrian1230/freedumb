@@ -91,7 +91,7 @@ class Introduction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
+      padding: const EdgeInsets.fromLTRB(5, 15, 5, 5),
       child: RichText(
         text: TextSpan(
           children: [
