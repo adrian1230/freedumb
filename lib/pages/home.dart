@@ -78,88 +78,91 @@ class _HomeState extends State<Home> {
       },
     ];
     return Scaffold(
-      body: Stack(
-        children: [
-          Image(
-            image: AssetImage("assets/images/s3.png"),
-            width: size.width,
-            height: size.height,
-            fit: BoxFit.cover,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: size.height * .07),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "Getting Your reading list ~",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.lightGreenAccent[400],
-                          fontSize: 28
-                        )
-                      ),
-                    ],
+      resizeToAvoidBottomPadding: false ,
+      body: SafeArea(
+        child: Stack(
+          children: [
+            Image(
+              image: AssetImage("assets/images/s3.png"),
+              width: size.width,
+              height: size.height,
+              fit: BoxFit.cover,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: size.height * .07),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  child: RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "Getting Your reading list ~",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.lightGreenAccent[400],
+                            fontSize: 28
+                          )
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(width: size.height * 0.4),
-                  Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: size.width * 0.05, vertical: size.height * 0.03),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            SingleChildScrollView(
-                              child: Column(
-                                children: [
-                                  for (var i in books)
-                                    Container(
-                                      margin: EdgeInsets.only(bottom: 16),
-                                      width: size.width - 38,
-                                      decoration: BoxDecoration(
-                                        color:  Color(0xFFEBEDF0),
-                                        borderRadius: BorderRadius.circular(25),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            offset: Offset(0,10),
-                                            blurRadius: 28,
-                                            color: Color(0xFFD6D4D2).withOpacity(0.6),
-                                          ),
-                                        ],
-                                      ),
-                                      child: ListTile(
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(i["img"]),
-                                          radius: 50,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(width: size.height * 0.4),
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: size.width * 0.05, vertical: size.height * 0.03),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              SingleChildScrollView(
+                                child: Column(
+                                  children: [
+                                    for (var i in books)
+                                      Container(
+                                        margin: EdgeInsets.only(bottom: 16),
+                                        width: size.width - 38,
+                                        decoration: BoxDecoration(
+                                          color:  Color(0xFFEBEDF0),
+                                          borderRadius: BorderRadius.circular(25),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              offset: Offset(0,10),
+                                              blurRadius: 28,
+                                              color: Color(0xFFD6D4D2).withOpacity(0.6),
+                                            ),
+                                          ],
                                         ),
-                                        title: Text(i["name"]),
-                                        subtitle: Text(i["price"].toString()+" USD"),
-                                        onLongPress: () => {},
+                                        child: ListTile(
+                                          leading: CircleAvatar(
+                                            backgroundImage: AssetImage(i["img"]),
+                                            radius: 50,
+                                          ),
+                                          title: Text(i["name"]),
+                                          subtitle: Text(i["price"].toString()+" USD"),
+                                          onLongPress: () => {},
+                                        ),
                                       ),
-                                    ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ],
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
