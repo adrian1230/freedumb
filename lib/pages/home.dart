@@ -14,19 +14,25 @@ class _HomeState extends State<Home> {
       body: Stack(
         children: [
           Background(size: size),
-          SizedBox(height: size.height * 0.2),
           Introduction(),
-          // Center(
-          //   child: SingleChildScrollView(
-          //     padding: EdgeInsets.fromLTRB(
-          //       15, 10, 15, 10
-          //     ),
-          //     child: Column(
-          //       crossAxisAlignment: CrossAxisAlignment.stretch,
-          //       children: _forloop(books, size),
-          //     ),
-          //   ),
-          // ),
+          SizedBox(height: size.height * 0.2),
+          Divider(),
+          Center(
+            child: SingleChildScrollView(
+              padding: EdgeInsets.fromLTRB(
+                15, 10, 15, 10
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  SizedBox(height: size.height*0.01),
+                  Column(
+                    children: _forloop(books, size),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -92,7 +98,7 @@ class Introduction extends StatelessWidget {
   Widget build(BuildContext context) {
     var s = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.fromLTRB(10, 35 , 10, 10),
+      padding: const EdgeInsets.fromLTRB(10, 45 , 10, 10),
       child: RichText(
         text: TextSpan(
           children: [
