@@ -26,35 +26,20 @@ class _HomeState extends State<Home> {
           ),
           SliverList(
             delegate: SliverChildListDelegate(
-              _forloop(books, size)
+              [
+                Column(
+                  children: [
+                    SizedBox(height: size.height * 0.02),
+                    Column(
+                      children: _forloop(books, size)
+                    )
+                  ],
+                )
+              ]
             ),
           ),
         ],
       ),
-      // body: Stack(
-      //   children: [
-      //     Background(size: size),
-      //     Introduction(),
-      //     SizedBox(height: size.height * 0.2),
-      //     Divider(),
-      //     Center(
-      //       child: SingleChildScrollView(
-      //         padding: EdgeInsets.fromLTRB(
-      //           15, size.height*0.1, 15, 10
-      //         ),
-      //         child: Column(
-      //           crossAxisAlignment: CrossAxisAlignment.stretch,
-      //           children: [
-      //             SizedBox(height: size.height*0.01),
-      //             Column(
-      //               children: _forloop(books, size),
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-      //     ),
-      //   ],
-      // ),
     );
   }
 
