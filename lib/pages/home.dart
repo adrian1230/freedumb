@@ -93,26 +93,10 @@ class _HomeState extends State<Home> {
                       alignment: Alignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
+                          padding: EdgeInsets.symmetric(horizontal: size.width * 0.1, vertical: size.height * 0.03),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Container(
-                                padding: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
-                                margin: EdgeInsets.only(bottom: 16),
-                                width: size.width - 38,
-                                decoration: BoxDecoration(
-                                  color:  Color(0xFFEBEDF0),
-                                  borderRadius: BorderRadius.circular(25),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      offset: Offset(0,10),
-                                      blurRadius: 28,
-                                      color: Color(0xFFD6D4D2).withOpacity(0.6),
-                                    ),
-                                  ],
-                                ),
-                              ),
                               for (var i in books)
                                 Container(
                                   margin: EdgeInsets.only(bottom: 16),
@@ -133,7 +117,8 @@ class _HomeState extends State<Home> {
                                       backgroundImage: AssetImage(i["img"]),
                                     ),
                                     title: Text(i["name"]),
-                                    subtitle: Text(i["price"].toString())
+                                    subtitle: Text(i["price"].toString()),
+                                    onLongPress: () => {},
                                   ),
                                 ),
                             ],
