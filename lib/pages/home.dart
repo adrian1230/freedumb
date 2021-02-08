@@ -14,24 +14,40 @@ class _HomeState extends State<Home> {
       body: Stack(
         children: [
           Background(size: size),
-          Column(
-            children: [
-              SizedBox(height: size.height * .07),
-              Introduction(),
-              SizedBox(width: size.height * 0.4),
-              Expanded(
-                flex: 1,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.05, vertical: size.height * 0.03),
-                  child: Column(
-                    children: _forloop(books, size)
-                  ),
-                ),
-              ),
-            ],
-          ),
         ],
       ),
+      // body: Stack(
+      //   children: [
+      //     Background(size: size),
+      //     Column(
+      //       children: [
+      //         SizedBox(height: size.height * .07),
+      //         Introduction(),
+      //         SizedBox(width: size.height * 0.4),
+      //         Expanded(
+      //           flex: 1,
+      //           child: Padding(
+      //             padding: EdgeInsets.symmetric(horizontal: size.width * 0.05, vertical: size.height * 0.03),
+      //             child: Column(
+      //               children: _forloop(books, size)
+      //             ),
+      //           ),
+      //         ),
+      //       ],
+      //     ),
+      //   ],
+      // ),
+      // body: CustomScrollView(
+      //   slivers: [
+      //     SliverList(
+      //       delegate: SliverChildListDelegate(
+      //         [
+      //           Background(size: size),
+      //         ]
+      //       ),
+      //     ),
+      //   ],
+      // ),
     );
   }
 
