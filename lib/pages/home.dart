@@ -83,52 +83,54 @@ class _HomeState extends State<Home> {
         children: [
           Background(size: size),
           Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: size.height * .07),
               Introduction(),
               SizedBox(width: size.height * 0.4),
-              SingleChildScrollView(
-                child: Form(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: size.width * 0.05, vertical: size.height * 0.03),
-                    child: Column(
-                      children: [
-                        for (var i in books)
-                          Container(
-                            margin: EdgeInsets.only(bottom: 16),
-                            width: size.width - 38,
-                            decoration: BoxDecoration(
-                              color:  Color(0xFFEBEDF0),
-                              borderRadius: BorderRadius.circular(25),
-                              boxShadow: [
-                                BoxShadow(
-                                  offset: Offset(0,10),
-                                  blurRadius: 28,
-                                  color: Color(0xFFD6D4D2).withOpacity(0.6),
-                                ),
-                              ],
-                            ),
-                            child: ListTile(
-                              leading: CircleAvatar(
-                                backgroundImage: AssetImage(i["img"]),
-                                radius: 50,
-                              ),
-                              title: Text(i["name"]),
-                              subtitle: Text(i["price"].toString()+" USD"),
-                              onLongPress: () => {},
-                            ),
-                          ),
-                      ]
-                    ),
-                  )
-                ),
+              Form(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.05, vertical: size.height * 0.03),
+                  child: Column(
+                    children: _forloop(books, size)
+                  ),
+                )
               ),
             ],
           ),
         ],
       ),
     );
+  }
+
+  List<Widget> _forloop(List<Map<String, Object>> books, Size size) {
+    return 
+    [
+      for (var i in books)
+        Container(
+          margin: EdgeInsets.only(bottom: 16),
+          width: size.width - 38,
+          decoration: BoxDecoration(
+            color:  Color(0xFFEBEDF0),
+            borderRadius: BorderRadius.circular(25),
+            boxShadow: [
+              BoxShadow(
+                offset: Offset(0,10),
+                blurRadius: 28,
+                color: Color(0xFFD6D4D2).withOpacity(0.6),
+              ),
+            ],
+          ),
+          child: ListTile(
+            leading: CircleAvatar(
+              backgroundImage: AssetImage(i["img"]),
+              radius: 50,
+            ),
+            title: Text(i["name"]),
+            subtitle: Text(i["price"].toString()+" USD"),
+            onLongPress: () => {},
+          ),
+        ),
+    ];
   }
 }
 
@@ -167,7 +169,7 @@ class Introduction extends StatelessWidget {
               text: "Getting Your reading list ~",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Colors.lightGreenAccent[400],
+                color: Colors.grey[850],
                 fontSize: 28
               )
             ),
