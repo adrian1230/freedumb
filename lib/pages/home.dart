@@ -81,12 +81,7 @@ class _HomeState extends State<Home> {
       resizeToAvoidBottomPadding: false ,
       body: Stack(
         children: [
-          Image(
-            image: AssetImage("assets/images/s3.png"),
-            width: size.width,
-            height: size.height,
-            fit: BoxFit.cover,
-          ),
+          Background(size: size),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -140,6 +135,25 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class Background extends StatelessWidget {
+  const Background({
+    Key key,
+    @required this.size,
+  }) : super(key: key);
+
+  final Size size;
+
+  @override
+  Widget build(BuildContext context) {
+    return Image(
+      image: AssetImage("assets/images/s3.png"),
+      width: size.width,
+      height: size.height,
+      fit: BoxFit.cover,
     );
   }
 }
