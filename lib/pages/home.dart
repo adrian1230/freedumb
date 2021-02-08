@@ -27,14 +27,22 @@ class _HomeState extends State<Home> {
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                Column(
-                  children: [
-                    SizedBox(height: size.height * 0.02),
-                    Column(
-                      children: _forloop(books, size)
-                    )
-                  ],
-                )
+                Container(
+                  // decoration: BoxDecoration(
+                  //   image: DecorationImage(
+                  //     image: AssetImage("assets/images/s3.png"),
+                  //     fit: BoxFit.cover,
+                  //   ),
+                  // ),
+                  child: Column(
+                    children: [
+                      SizedBox(height: size.height * 0.02),
+                      Column(
+                        children: _forloop(books, size)
+                      )
+                    ],
+                  ),
+                ),
               ]
             ),
           ),
