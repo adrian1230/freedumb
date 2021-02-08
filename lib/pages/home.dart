@@ -14,18 +14,19 @@ class _HomeState extends State<Home> {
       body: Stack(
         children: [
           Background(size: size),
+          SizedBox(height: size.height * 0.2),
           Introduction(),
-          Center(
-            child: SingleChildScrollView(
-              padding: EdgeInsets.fromLTRB(
-                15, 10, 15, 10
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: _forloop(books, size),
-              ),
-            ),
-          ),
+          // Center(
+          //   child: SingleChildScrollView(
+          //     padding: EdgeInsets.fromLTRB(
+          //       15, 10, 15, 10
+          //     ),
+          //     child: Column(
+          //       crossAxisAlignment: CrossAxisAlignment.stretch,
+          //       children: _forloop(books, size),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
