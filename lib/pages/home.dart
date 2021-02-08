@@ -120,10 +120,7 @@ class _HomeState extends State<Home> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            SingleChildScrollView(
-                              child: Column(
-                                children: [
-                                  ListView(
+                            ListView(
                                     children: [
                                       for (var i in books)
                                         Container(
@@ -152,9 +149,6 @@ class _HomeState extends State<Home> {
                                         ),
                                     ],
                                   ),
-                                ],
-                              ),
-                            ),
                           ],
                         ),
                       ),
