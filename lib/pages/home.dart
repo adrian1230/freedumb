@@ -17,7 +17,6 @@ class _HomeState extends State<Home> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            // title: Introduction(),
             floating: false,
             flexibleSpace: FlexibleSpaceBar(
               title: Introduction(),
