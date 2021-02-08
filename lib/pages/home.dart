@@ -87,83 +87,42 @@ class _HomeState extends State<Home> {
             children: [
               SizedBox(height: size.height * .07),
               Introduction(),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(width: size.height * 0.4),
-                  SingleChildScrollView(
-                    child: Form(
-                      child: Column(
-                        children: [
-                          for (var i in books)
-                            Container(
-                              padding: EdgeInsets.symmetric(horizontal: size.width * 0.02),
-                              margin: EdgeInsets.only(bottom: 16),
-                              width: size.width - 38,
-                              decoration: BoxDecoration(
-                                color:  Color(0xFFEBEDF0),
-                                borderRadius: BorderRadius.circular(25),
-                                boxShadow: [
-                                  BoxShadow(
-                                    offset: Offset(0,10),
-                                    blurRadius: 28,
-                                    color: Color(0xFFD6D4D2).withOpacity(0.6),
-                                  ),
-                                ],
-                              ),
-                              child: ListTile(
-                                leading: CircleAvatar(
-                                  backgroundImage: AssetImage(i["img"]),
-                                  radius: 50,
+              SizedBox(width: size.height * 0.4),
+              SingleChildScrollView(
+                child: Form(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: size.width * 0.05, vertical: size.height * 0.03),
+                    child: Column(
+                      children: [
+                        for (var i in books)
+                          Container(
+                            margin: EdgeInsets.only(bottom: 16),
+                            width: size.width - 38,
+                            decoration: BoxDecoration(
+                              color:  Color(0xFFEBEDF0),
+                              borderRadius: BorderRadius.circular(25),
+                              boxShadow: [
+                                BoxShadow(
+                                  offset: Offset(0,10),
+                                  blurRadius: 28,
+                                  color: Color(0xFFD6D4D2).withOpacity(0.6),
                                 ),
-                                title: Text(i["name"]),
-                                subtitle: Text(i["price"].toString()+" USD"),
-                                onLongPress: () => {},
-                              ),
+                              ],
                             ),
-                        ],
-                      ),
+                            child: ListTile(
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(i["img"]),
+                                radius: 50,
+                              ),
+                              title: Text(i["name"]),
+                              subtitle: Text(i["price"].toString()+" USD"),
+                              onLongPress: () => {},
+                            ),
+                          ),
+                      ]
                     ),
-                  ),
-                  // Stack(
-                  //   alignment: Alignment.center,
-                  //   children: [
-                  //     Padding(
-                  //       padding: EdgeInsets.symmetric(horizontal: size.width * 0.05, vertical: size.height * 0.03),
-                  //       child: Column(
-                  //         crossAxisAlignment: CrossAxisAlignment.center,
-                  //         children: [
-                            // for (var i in books)
-                            // Container(
-                            //   margin: EdgeInsets.only(bottom: 16),
-                            //   width: size.width - 38,
-                            //   decoration: BoxDecoration(
-                            //     color:  Color(0xFFEBEDF0),
-                            //     borderRadius: BorderRadius.circular(25),
-                            //     boxShadow: [
-                            //       BoxShadow(
-                            //         offset: Offset(0,10),
-                            //         blurRadius: 28,
-                            //         color: Color(0xFFD6D4D2).withOpacity(0.6),
-                            //       ),
-                            //     ],
-                            //   ),
-                            //   child: ListTile(
-                            //     leading: CircleAvatar(
-                            //       backgroundImage: AssetImage(i["img"]),
-                            //       radius: 50,
-                            //     ),
-                            //     title: Text(i["name"]),
-                            //     subtitle: Text(i["price"].toString()+" USD"),
-                            //     onLongPress: () => {},
-                            //   ),
-                            // ),
-                  //         ],
-                  //       ),
-                  //     ),
-                  //   ],
-                  // ),
-                ],
+                  )
+                ),
               ),
             ],
           ),
