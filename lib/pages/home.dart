@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
           Center(
             child: SingleChildScrollView(
               padding: EdgeInsets.fromLTRB(
-                15, size.height*0.05, 15, 10
+                15, size.height*0.1, 15, 10
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
