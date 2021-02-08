@@ -90,8 +90,9 @@ class Introduction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var s = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.fromLTRB(5, 15, 5, 5),
+      padding: const EdgeInsets.fromLTRB(10, 35 , 10, 10),
       child: RichText(
         text: TextSpan(
           children: [
