@@ -11,7 +11,6 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      resizeToAvoidBottomPadding: false ,
       body: Stack(
         children: [
           Background(size: size),
