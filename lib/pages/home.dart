@@ -50,11 +50,11 @@ class _HomeState extends State<Home> {
                   text: TextSpan(
                     children: [
                       TextSpan(
-                        text: "You are reading ~",
+                        text: "Getting Your reading list ~",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Colors.brown[700],
-                          fontSize: 30
+                          color: Colors.lightGreenAccent[400],
+                          fontSize: 28
                         )
                       ),
                     ],
@@ -75,7 +75,22 @@ class _HomeState extends State<Home> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-
+                              // Container(
+                              //   padding: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+                              //   margin: EdgeInsets.only(bottom: 16),
+                              //   width: size.width - 38,
+                              //   decoration: BoxDecoration(
+                              //     color:  Color(0xFFEBEDF0),
+                              //     borderRadius: BorderRadius.circular(25),
+                              //     boxShadow: [
+                              //       BoxShadow(
+                              //         offset: Offset(0,10),
+                              //         blurRadius: 28,
+                              //         color: Color(0xFFD6D4D2).withOpacity(0.6),
+                              //       ),
+                              //     ],
+                              //   ),
+                              // ),
                             ],
                           ),
                         ),
