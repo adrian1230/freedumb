@@ -9,29 +9,51 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    var book_image = [
-      "assets/images/b1.png",
-      "assets/images/b2.png",
-      "assets/images/b3.png",
-      "assets/images/b4.png",
-      "assets/images/b5.png",
-      "assets/images/b6.png",
-      "assets/images/b7.png",
-    ];
-    var book_price = [
-      12,19.9,14,25,67,109,48.5
-    ];
-    var book_name = [
-      "THE GENE AND INTIMATE HISTORY",
-      "MY FIGHT YOUR FIGHT",
-      "STOP SURVIVING START FIGHTING",
-      "THE SURVIVORS",
-      "The Mermaid of Black Conch",
-      "PROSPER'S DEMON",
-      "The Body"
+    var books =[
+      {
+        "id":"0",
+        "img":"assets/images/b1.png",
+        "name":"THE GENE AND INTIMATE HISTORY",
+        "price":12
+      },
+      {
+        "id":"1",
+        "img":"assets/images/b2.png",
+        "name":"MY FIGHT YOUR FIGHT",
+        "price":19.99
+      },
+      {
+        "id":"2",
+        "img":"assets/images/b3.png",
+        "name":"STOP SURVIVING START FIGHTING",
+        "price":123
+      },
+      {
+        "id":"3",
+        "img":"assets/images/b4.png",
+        "name":"THE SURVIVORS",
+        "price":102
+      },
+      {
+        "id":"4",
+        "img":"assets/images/b5.png",
+        "name":"The Mermaid of Black Conch",
+        "price":10.2
+      },
+      {
+        "id":"5",
+        "img":"assets/images/b6.png",
+        "name":"PROSPER'S DEMON",
+        "price":129.99
+      },
+      {
+        "id":"6",
+        "img":"assets/images/b7.png",
+        "name":"The Body",
+        "price":82
+      },
     ];
     return Scaffold(
-      // backgroundColor: Color(0xffEBEDF0),
       body: Stack(
         children: [
           Image(
@@ -61,36 +83,59 @@ class _HomeState extends State<Home> {
                   ),
                 ),
               ),
-              SizedBox(height: 15),
               SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SizedBox(width: size.height * 0.2),
                     Stack(
                       alignment: Alignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(top: size.height * .31),
+                          padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              // Container(
-                              //   padding: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
-                              //   margin: EdgeInsets.only(bottom: 16),
-                              //   width: size.width - 38,
-                              //   decoration: BoxDecoration(
-                              //     color:  Color(0xFFEBEDF0),
-                              //     borderRadius: BorderRadius.circular(25),
-                              //     boxShadow: [
-                              //       BoxShadow(
-                              //         offset: Offset(0,10),
-                              //         blurRadius: 28,
-                              //         color: Color(0xFFD6D4D2).withOpacity(0.6),
-                              //       ),
-                              //     ],
-                              //   ),
-                              // ),
+                              Container(
+                                padding: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+                                margin: EdgeInsets.only(bottom: 16),
+                                width: size.width - 38,
+                                decoration: BoxDecoration(
+                                  color:  Color(0xFFEBEDF0),
+                                  borderRadius: BorderRadius.circular(25),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      offset: Offset(0,10),
+                                      blurRadius: 28,
+                                      color: Color(0xFFD6D4D2).withOpacity(0.6),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              for (var i in books)
+                                Container(
+                                  margin: EdgeInsets.only(bottom: 16),
+                                  width: size.width - 38,
+                                  decoration: BoxDecoration(
+                                    color:  Color(0xFFEBEDF0),
+                                    borderRadius: BorderRadius.circular(25),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        offset: Offset(0,10),
+                                        blurRadius: 28,
+                                        color: Color(0xFFD6D4D2).withOpacity(0.6),
+                                      ),
+                                    ],
+                                  ),
+                                  child: ListTile(
+                                    leading: CircleAvatar(
+                                      backgroundImage: AssetImage(i["img"]),
+                                    ),
+                                    title: Text(i["name"]),
+                                    subtitle: Text(i["price"].toString())
+                                  ),
+                                ),
                             ],
                           ),
                         ),
