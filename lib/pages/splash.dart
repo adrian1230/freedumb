@@ -9,7 +9,7 @@ class Splash extends StatelessWidget {
     var splashes = [
       "assets/images/s1.png",
       "assets/images/s2.png",
-      // "assets/images/s3.png",
+      "assets/images/s3.png",
     ];
     var _random = new Random();
     var n = _random.nextInt(splashes.length);

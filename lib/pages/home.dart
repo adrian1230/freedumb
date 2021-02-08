@@ -13,6 +13,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.black,
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -22,18 +23,11 @@ class _HomeState extends State<Home> {
               title: Introduction(),
             ),
             pinned: true,
-            // snap: false,
           ),
           SliverList(
             delegate: SliverChildListDelegate(
               [
                 Container(
-                  // decoration: BoxDecoration(
-                  //   image: DecorationImage(
-                  //     image: AssetImage("assets/images/s3.png"),
-                  //     fit: BoxFit.cover,
-                  //   ),
-                  // ),
                   child: Column(
                     children: [
                       SizedBox(height: size.height * 0.02),
