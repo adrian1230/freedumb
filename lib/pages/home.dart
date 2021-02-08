@@ -97,7 +97,7 @@ class _HomeState extends State<Home> {
                         children: [
                           for (var i in books)
                             Container(
-                              padding: EdgeInsets.symmetric(horizontal: size.width * 0.05, vertical: size.height * 0.03),
+                              padding: EdgeInsets.symmetric(horizontal: size.width * 0.02, vertical: size.height * 0.01),
                               margin: EdgeInsets.only(bottom: 16),
                               width: size.width - 38,
                               decoration: BoxDecoration(
