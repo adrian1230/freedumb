@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:funspot/pages/detail.dart';
 import 'package:funspot/database/sample.dart';
 
 class Home extends StatefulWidget {
@@ -71,7 +72,13 @@ class _HomeState extends State<Home> {
             ),
             title: Text(i["name"]),
             subtitle: Text(i["price"].toString()+" USD"),
-            onTap: () => {},
+            onTap: () => {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (BuildContext context) => Detail()
+                )
+              )
+            },
           ),
         ),
     ];
