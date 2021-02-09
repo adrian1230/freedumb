@@ -11,7 +11,7 @@ class FullScreen extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(books[ex]['img']),
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
           ),
         ),
       ),
