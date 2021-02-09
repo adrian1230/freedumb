@@ -75,7 +75,7 @@ class _HomeState extends State<Home> {
             onTap: () => {
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
-                  builder: (BuildContext context) => Detail()
+                  builder: (BuildContext context) => Detail(ind: i)
                 )
               )
             },

@@ -8,14 +8,17 @@ import 'package:funspot/database/sample.dart';
 //   Book(this.img,this.name,this.price);
 // }
 
-class Detail extends StatefulWidget {
-  // Detail({Key key, @required this.book_1}) : super(key: key);
-  // final List book_1;
-  @override
-  _DetailState createState() => _DetailState();
-}
+class Detail extends StatelessWidget {
+  Detail({Key key, @required this.ind}) : super(key: key);
+  final int ind;
+//   @override
+//   _DetailState createState() => _DetailState();
+// }
 
-class _DetailState extends State<Detail> {
+// class _DetailState extends State<Detail> {
+  // final int ind;
+
+  // _DetailState(@required this.ind);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +31,7 @@ class _DetailState extends State<Detail> {
                 pinned: true,
                 flexibleSpace: FlexibleSpaceBar(
                   background: Image.asset(
-                    'assets/images/b1.png',
+                    books[ind]['img'],
                     fit:BoxFit.cover
                   ),
                 ),
@@ -51,8 +54,8 @@ class _DetailState extends State<Detail> {
                       child: Container(
                         child: Column(
                           children: [
-                            Text(books[0]['name']),
-                            Text(books[0]['price'].toString())
+                            Text(books[ind]['name']),
+                            Text(books[ind]['price'].toString())
                           ]
                         ),
                       ),
