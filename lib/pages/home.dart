@@ -70,7 +70,7 @@ class _HomeState extends State<Home> {
               backgroundImage: AssetImage(i["img"]),
               radius: 50,
             ),
-            title: Text(i["name"]),
+            title: Text(i['name']),
             subtitle: Text(i["price"].toString()+" USD"),
             onTap: () => {
               Navigator.of(context).pushReplacement(
