@@ -13,8 +13,15 @@ class Detail extends StatelessWidget {
           CustomScrollView(
             slivers: [
               SliverAppBar(
-                title: Text(books[ind]['name']),
+                title: Text(
+                  "FreeDumb",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold
+                  ),
+                ),
                 expandedHeight: 330,
+                floating: false,
                 pinned: true,
                 flexibleSpace: FlexibleSpaceBar(
                   background: Image.asset(
@@ -26,14 +33,13 @@ class Detail extends StatelessWidget {
                   IconButton(
                     icon: Icon(Icons.open_in_full),
                     color: Colors.white,
-                    onPressed: () => Navigator.of(context,rootNavigator: true).pop(context)
+                    onPressed: () => {}
                   )
                 ],
               ),
               SliverList(
                 delegate: SliverChildListDelegate(
                   [
-                    SizedBox(height: size.height * 0.01),
                     Container(
                       decoration: BoxDecoration(
                         color:  Color(0xFFEBEDF0),
@@ -49,6 +55,7 @@ class Detail extends StatelessWidget {
                       child: Container(
                         child: Column(
                           children: [
+                            SizedBox(height: size.height * 0.03),
                             Text(books[ind]['name']),
                             Text(books[ind]['price'].toString())
                           ]
