@@ -25,7 +25,7 @@ class Detail extends StatelessWidget {
                   IconButton(
                     icon: Icon(Icons.open_in_full),
                     color: Colors.white,
-                    onPressed: null
+                    onPressed: () => Navigator.of(context,rootNavigator: true).pop(context)
                   )
                 ],
               ),
