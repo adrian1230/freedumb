@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:funspot/database/sample.dart';
+import 'package:funspot/pages/fullscreen.dart';
 
 class Detail extends StatelessWidget {
   Detail({Key key, @required this.ind}) : super(key: key);
@@ -33,7 +34,14 @@ class Detail extends StatelessWidget {
                   IconButton(
                     icon: Icon(Icons.open_in_full),
                     color: Colors.white,
-                    onPressed: () => {}
+                    onPressed: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => FullScreen(ex: ind)
+                        )
+                      )
+                    }
                   )
                 ],
               ),
