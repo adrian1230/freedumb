@@ -12,7 +12,7 @@ class Detail extends StatelessWidget {
           CustomScrollView(
             slivers: [
               SliverAppBar(
-                expandedHeight: 250,
+                expandedHeight: 330,
                 pinned: true,
                 flexibleSpace: FlexibleSpaceBar(
                   background: Image.asset(
@@ -20,6 +20,18 @@ class Detail extends StatelessWidget {
                     fit:BoxFit.cover
                   ),
                 ),
+                actions: [
+                  IconButton(
+                    icon: Icon(Icons.open_in_full),
+                    color: Colors.white,
+                    onPressed: null
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.open_in_full),
+                    color: Colors.white,
+                    onPressed: null
+                  )
+                ],
               ),
               SliverList(
                 delegate: SliverChildListDelegate(
