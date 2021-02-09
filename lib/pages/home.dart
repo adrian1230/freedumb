@@ -71,7 +71,7 @@ class _HomeState extends State<Home> {
             ),
             title: Text(i["name"]),
             subtitle: Text(i["price"].toString()+" USD"),
-            onLongPress: () => {},
+            onTap: () => {},
           ),
         ),
     ];
