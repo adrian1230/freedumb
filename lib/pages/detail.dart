@@ -14,10 +14,20 @@ class _DetailState extends State<Detail> {
         children: [
           CustomScrollView(
             slivers: [
-              SliverAppBar(),
+              SliverAppBar(
+                expandedHeight: 250,
+                pinned: true,
+                flexibleSpace: FlexibleSpaceBar(
+                  background: Image.asset(
+                    'assets/images/b1.png',
+                    fit:BoxFit.cover
+                  ),
+                ),
+              ),
               SliverList(
                 delegate: SliverChildListDelegate(
                   [
+                    Container(),
                   ]
                 ),
               ),
