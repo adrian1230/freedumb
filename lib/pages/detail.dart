@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:funspot/database/sample.dart';
 
@@ -6,6 +8,7 @@ class Detail extends StatelessWidget {
   final int ind;
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Stack(
         children: [
@@ -22,10 +25,13 @@ class Detail extends StatelessWidget {
                 ),
                 actions: [
                   IconButton(
-                    icon: Icon(Icons.open_in_full),
+                    icon: Icon(Icons.arrow_back_ios),
                     color: Colors.white,
-                    onPressed: null
+                    onPressed: () {
+                      Navigator.pop(context);
+                    }
                   ),
+                  Spacer(),
                   IconButton(
                     icon: Icon(Icons.open_in_full),
                     color: Colors.white,
@@ -36,6 +42,7 @@ class Detail extends StatelessWidget {
               SliverList(
                 delegate: SliverChildListDelegate(
                   [
+                    SizedBox(height: size.height * 0.01),
                     Container(
                       decoration: BoxDecoration(
                         color:  Color(0xFFEBEDF0),
