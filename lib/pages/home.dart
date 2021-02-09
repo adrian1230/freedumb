@@ -13,31 +13,44 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.black,
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            floating: false,
-            flexibleSpace: FlexibleSpaceBar(
-              title: Introduction(),
-            ),
-            pinned: true,
-          ),
-          SliverList(
-            delegate: SliverChildListDelegate(
-              [
-                Container(
-                  child: Column(
-                    children: [
-                      SizedBox(height: size.height * 0.02),
-                      Column(
-                        children: _forloop(books, size)
-                      )
-                    ],
-                  ),
+      // backgroundColor: Colors.black,
+      body: Stack(
+        children: [
+          Background(size: size),
+          CustomScrollView(
+            slivers: [
+              SliverAppBar(
+                floating: false,
+                flexibleSpace: FlexibleSpaceBar(
+                  title: Introduction(),
                 ),
-              ]
-            ),
+                pinned: true,
+              ),
+              SliverList(
+                delegate: SliverChildListDelegate(
+                  [
+                    Container(
+                      // decoration: BoxDecoration(
+                      //   image: DecorationImage(
+                      //     image: AssetImage("assets/images/s3.png"),
+                      //     fit: BoxFit.cover,
+                      //   ),
+                      // ),
+                      // constraints: BoxConstraints.expand(height: size.height * 1.1),
+                      child: Column(
+                        // mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(height: size.height * 0.02),
+                          Column(
+                            children: _forloop(books, size)
+                          )
+                        ],
+                      ),
+                    ),
+                  ]
+                ),
+              ),
+            ],
           ),
         ],
       ),
