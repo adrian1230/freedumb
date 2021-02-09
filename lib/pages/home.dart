@@ -50,7 +50,7 @@ class _HomeState extends State<Home> {
   List<Widget> _forloop(List<Map<String, Object>> books, Size size) {
     return 
     [
-      for (var i in books)
+      for (var i = 0; i < books.length; i++)
         Container(
           margin: EdgeInsets.only(bottom: 16),
           width: size.width - 38,
@@ -67,11 +67,11 @@ class _HomeState extends State<Home> {
           ),
           child: ListTile(
             leading: CircleAvatar(
-              backgroundImage: AssetImage(i["img"]),
+              backgroundImage: AssetImage(books[i]["img"]),
               radius: 50,
             ),
-            title: Text(i['name']),
-            subtitle: Text(i["price"].toString()+" USD"),
+            title: Text(books[i]['name']),
+            subtitle: Text(books[i]["price"].toString()+" USD"),
             onTap: () => {
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
