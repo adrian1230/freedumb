@@ -13,6 +13,7 @@ class Detail extends StatelessWidget {
           CustomScrollView(
             slivers: [
               SliverAppBar(
+                title: Text(books[ind]['name']),
                 expandedHeight: 330,
                 pinned: true,
                 flexibleSpace: FlexibleSpaceBar(
