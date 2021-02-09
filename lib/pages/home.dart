@@ -13,7 +13,6 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      // backgroundColor: Colors.black,
       body: Stack(
         children: [
           Background(size: size),
@@ -30,15 +29,7 @@ class _HomeState extends State<Home> {
                 delegate: SliverChildListDelegate(
                   [
                     Container(
-                      // decoration: BoxDecoration(
-                      //   image: DecorationImage(
-                      //     image: AssetImage("assets/images/s3.png"),
-                      //     fit: BoxFit.cover,
-                      //   ),
-                      // ),
-                      // constraints: BoxConstraints.expand(height: size.height * 1.1),
                       child: Column(
-                        // mainAxisSize: MainAxisSize.min,
                         children: [
                           SizedBox(height: size.height * 0.02),
                           Column(
