@@ -23,14 +23,6 @@ class Detail extends StatelessWidget {
                 ),
                 actions: [
                   IconButton(
-                    icon: Icon(Icons.arrow_back_ios),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.pop(context);
-                    }
-                  ),
-                  Spacer(),
-                  IconButton(
                     icon: Icon(Icons.open_in_full),
                     color: Colors.white,
                     onPressed: null

@@ -73,7 +73,8 @@ class _HomeState extends State<Home> {
             title: Text(books[i]['name']),
             subtitle: Text(books[i]["price"].toString()+" USD"),
             onTap: () => {
-              Navigator.of(context).pushReplacement(
+              Navigator.push(
+                context,
                 MaterialPageRoute(
                   builder: (BuildContext context) => Detail(ind: i)
                 )
