@@ -1,24 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:funspot/database/sample.dart';
 
-// class Book {
-//   final String img;
-//   final String name;
-//   final int price;
-//   Book(this.img,this.name,this.price);
-// }
-
 class Detail extends StatelessWidget {
   Detail({Key key, @required this.ind}) : super(key: key);
   final int ind;
-//   @override
-//   _DetailState createState() => _DetailState();
-// }
-
-// class _DetailState extends State<Detail> {
-  // final int ind;
-
-  // _DetailState(@required this.ind);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
