@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:funspot/database/sample.dart';
 
 class Detail extends StatefulWidget {
   @override
@@ -8,7 +9,23 @@ class Detail extends StatefulWidget {
 class _DetailState extends State<Detail> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Stack(
+        children: [
+          CustomScrollView(
+            slivers: [
+              SliverAppBar(),
+              SliverList(
+                delegate: SliverChildListDelegate(
+                  [
+                  ]
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
 
